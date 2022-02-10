@@ -12,7 +12,7 @@ class NewTask
         {
             channel.ExchangeDeclare(exchange: "logs", type: ExchangeType.Fanout);
             channel.QueueDeclare("test1", durable: true, autoDelete: false, exclusive: false);
-            // channel.QueueDeclare("test2", durable: true, autoDelete: false, exclusive: false);
+            channel.QueueDeclare("test2", durable: true, autoDelete: false, exclusive: false);
 
             for (int i = 0; i < 31; i++)
             {
